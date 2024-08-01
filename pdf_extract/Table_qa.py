@@ -13,6 +13,9 @@ def extraction_qa(qa_folder):
         extracted_info_question = {}
         extracted_info_answer = {}
 
+        extracted_info_question['文件名'] = filename
+        extracted_info_answer['文件名'] = filename
+
         question_pattern = re.compile(r'<Question/>:(.*?)</Question>', re.DOTALL)
         answer_pattern = re.compile(r'<Answer/>:(.*?)</Answer>', re.DOTALL)
         questions = question_pattern.findall(content)
@@ -26,8 +29,6 @@ def extraction_qa(qa_folder):
             if answer:
                 extracted_info_answer['回答'+str(i)] = answer
 
-        extracted_info_question['文件名'] = filename
-        extracted_info_answer['文件名'] = filename
 
         all_extracted_info_question.append(extracted_info_question)
         all_extracted_info_answer.append(extracted_info_answer)
