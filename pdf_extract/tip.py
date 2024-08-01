@@ -210,8 +210,12 @@ def directory_select(directory_folder, txt_folder):
             page_list = list(directory_dict.values())
 
             # 检查第一个目录标题页码是否包含目录内容，如果是，则页码加1
-            if any('目录' in line for line in pages[page_list[0]].split('\n')):
-                page_list[0] += 1
+            pages_0 = pages[page_list[0]].split('\n')
+            pages_1 = pages[page_list[0]+1].split('\n')
+            if any('目录' in line for line in pages_0):
+                page_list[0] +=1
+            if any('目录' in line for line in pages_1):
+                page_list[0] +=2
 
             combined_content = ''.join(pages[page_list[0]:])  # 只考虑目录页后的内容
 
