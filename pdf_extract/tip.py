@@ -2,10 +2,10 @@ import os
 import re
 import shutil
 
-source_folder=r'data_txt'
-target_folder1=r'qa_txt'
-target_folder2=r'origin_directory_txt'
-mid_folder=r'mid'
+source_folder = r'data_txt'
+target_folder1 = r'qa_txt'
+target_folder2 = r'origin_directory_txt'
+mid_folder = r'mid'
 
 def copy_file(src_file, dest_folder):
     if not os.path.exists(dest_folder):
